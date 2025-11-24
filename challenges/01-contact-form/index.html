@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./src/index.css" />
+    <title>Muhammad Tayyab | Frontend Mentor | Contact form</title>
+  </head>
+  <body class="scrollbar">
+    <main>
+      <form>
+        <h1 class="col-span-2">Contact Us</h1>
+        <div class="form-field">
+          <label for="firstname">First Name</label>
+          <input type="text" name="firstname" id="firstname" />
+        </div>
+        <div class="form-field">
+          <label for="lastname">Last Name</label>
+          <input type="text" name="lastname" id="lastname" />
+        </div>
+        <div class="form-field col-span-2">
+          <label for="email">Email Address</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <fieldset class="col-span-2">
+          <legend>Query Type</legend>
+          <div class="form-field">
+            <input type="radio" name="query" id="general_enquiry" />
+            <label for="general_enquiry">General Enquiry</label>
+          </div>
+          <div class="form-field">
+            <input type="radio" name="query" id="support_request" />
+            <label for="support_request">Support Request</label>
+          </div>
+        </fieldset>
+        <div class="form-field col-span-2">
+          <label for="message">Message</label>
+          <textarea name="message" id="message"></textarea>
+        </div>
+        <div class="form-field col-span-2">
+          <input type="checkbox" name="consent" id="consent" />
+          <label for="consent">I consent to being contacted by the team</label>
+        </div>
+        <button type="submit" class="col-span-2">Submit</button>
+      </form>
+    </main>
+  </body>
+</html>
