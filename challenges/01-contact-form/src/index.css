@@ -155,14 +155,21 @@ form {
     border: none;
     border-radius: var(--b-rad);
     background-color: var(--green-medium);
-    color: var(--green-light);
+    color: white;
     cursor: pointer;
     &:focus-visible {
       outline: none;
+      background-color: var(--green-dark);
     }
     &:hover {
       background-color: var(--green-dark);
     }
+  }
+}
+
+@media screen and (max-width: 525px) {
+  form :has(> label) {
+    grid-column: span 2;
   }
 }
 
@@ -174,8 +181,5 @@ form {
     --form-width: 95%;
     --g-gap: 1rem 0rem;
     --lb-gap: 0.25rem;
-  }
-  form :has(> label) {
-    grid-column: span 2;
   }
 }
