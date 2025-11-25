@@ -13,8 +13,13 @@
     <title>Muhammad Tayyab | Frontend Mentor | Contact form</title>
   </head>
   <body class="scrollbar">
+    <div id="success">
+      <img src="./assets/images/icon-success-check.svg" alt="success" />
+      <h2>Message Sent!</h2>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
     <main>
-      <form novalidate>
+      <form method="post" novalidate>
         <h1 class="col-span-2">Contact Us</h1>
         <div class="form-field">
           <label for="firstname">First Name</label>
@@ -73,6 +78,15 @@
         </div>
         <button type="submit" class="col-span-2">Submit</button>
       </form>
+      <footer>
+        <a href="https://www.frontendmentor.io" target="_blank"
+          >Frontend Mentor Challenge</a
+        >
+        <span>By</span>
+        <a href="https://mtayyabrawan.github.io" target="_blank"
+          >Muhammad Tayyab (@mtayyabrawan)</a
+        >
+      </footer>
     </main>
     <script src="./src/main.js"></script>
   </body>

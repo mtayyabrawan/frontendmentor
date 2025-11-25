@@ -19,7 +19,7 @@
   --sm: 0.85rem;
   /* others */
   --b-rad: 0.5rem;
-  --fb-margin: 5rem;
+  --fb-margin: 7rem 2rem;
   --ff-gap: 0.75rem;
   --form-pg: 2rem;
   --form-width: 42.25rem;
@@ -27,6 +27,9 @@
   --input-pg: 0.75rem 1rem;
   --lb-gap: 0.5rem;
   --outline: 1px solid var(--grey-medium);
+  --para-space: 1.25lh;
+  --success-width: 25rem;
+  --footer-dir: row;
 }
 
 * {
@@ -61,10 +64,38 @@
 }
 
 body {
+  position: relative;
   min-inline-size: 320px;
   background-color: var(--green-light);
 }
-
+#success {
+  position: fixed;
+  top: -10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--ff-gap);
+  width: var(--success-width);
+  background-color: var(--grey-dark);
+  color: var(--white);
+  padding: 1rem;
+  border-radius: var(--b-rad);
+  h2 {
+    font-size: var(--md);
+  }
+  p {
+    font-weight: lighter;
+    flex-basis: 100%;
+    font-size: var(--sm);
+    line-height: var(--para-space);
+  }
+  &.animate {
+    animation: move-down 2s linear 1;
+  }
+}
 form {
   display: grid;
   gap: var(--g-gap);
@@ -115,7 +146,6 @@ form {
         outline: none;
       }
       &[type="checkbox"] ~ .error-msg {
-        flex-grow: 2;
         flex-basis: 100%;
       }
       &:user-invalid {
@@ -125,7 +155,7 @@ form {
     textarea {
       box-sizing: content-box;
       height: 2.5lh;
-      line-height: 1.25lh;
+      line-height: var(--para-space);
       resize: none;
     }
   }
@@ -177,6 +207,9 @@ form {
     &:hover {
       background-color: var(--green-dark);
     }
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
   .error-msg {
     display: none;
@@ -188,7 +221,32 @@ form {
   }
 }
 
+footer {
+  display: flex;
+  flex-direction: var(--footer-dir);
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  width: max-content;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  a {
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--green-medium);
+  }
+  a[target="_blank"]::after {
+    content: "↗";
+    font-size: var(--md);
+    margin-left: 0.25rem;
+  }
+}
+
 @media screen and (max-width: 525px) {
+  :root {
+    --footer-dir: column;
+    --success-width: 20rem;
+  }
   form :has(> label) {
     grid-column: span 2;
   }
@@ -202,5 +260,13 @@ form {
     --form-width: 95%;
     --g-gap: 1rem 0rem;
     --lb-gap: 0.25rem;
+    --success-width: 90%;
+  }
+}
+
+@keyframes move-down {
+  25%,
+  100% {
+    top: 2rem;
   }
 }
