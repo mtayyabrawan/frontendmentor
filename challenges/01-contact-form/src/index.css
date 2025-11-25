@@ -93,6 +93,9 @@ form {
         cursor: pointer;
         text-wrap: nowrap;
       }
+      &:has([type="checkbox"]) {
+        flex-wrap: wrap;
+      }
     }
     input,
     textarea {
@@ -102,12 +105,21 @@ form {
       border-radius: var(--b-rad);
       outline: var(--outline);
       cursor: pointer;
-      &:focus-visible {
+      &:focus-visible,
+      &:hover {
         outline-color: var(--green-medium);
+        outline-width: 1.75px;
       }
       &[type="radio"],
       &[type="checkbox"] {
         outline: none;
+      }
+      &[type="checkbox"] ~ .error-msg {
+        flex-grow: 2;
+        flex-basis: 100%;
+      }
+      &:user-invalid {
+        outline-color: var(--red);
       }
     }
     textarea {
@@ -129,7 +141,8 @@ form {
   }
   fieldset {
     display: inherit;
-    grid-gap: inherit;
+    gap: inherit;
+    row-gap: var(--ff-gap);
     grid-template-columns: inherit;
     padding-top: var(--ff-gap);
     border: none;
@@ -164,6 +177,14 @@ form {
     &:hover {
       background-color: var(--green-dark);
     }
+  }
+  .error-msg {
+    display: none;
+  }
+  > :has(:user-invalid) > .error-msg {
+    display: block;
+    color: var(--red);
+    font-size: var(--sm);
   }
 }
 
