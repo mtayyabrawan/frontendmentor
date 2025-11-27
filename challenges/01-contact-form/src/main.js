@@ -26,15 +26,9 @@ _form.addEventListener("submit", (event) => {
   _formBtn.disabled = true;
   event.preventDefault();
   const _target = event.currentTarget;
-  let validForm = true;
-  for (const _input of [..._inputs, _textarea]) {
-    if (!_input.validity.valid) {
-      _input.focus();
-      validForm = false;
-      break;
-    }
-  }
-  if (!validForm) {
+  const invalidField = _target.querySelector(":user-invalid");
+  if (invalidField) {
+    invalidField.focus();
     _formBtn.disabled = false;
     return;
   }
