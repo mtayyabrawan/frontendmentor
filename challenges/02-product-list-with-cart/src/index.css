@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Red Hat";
+  src: url("/fonts/RedHatText-VariableFont_wght.ttf") format("TrueType");
+}
+
+* {
+  font-family: "Red Hat", Tahoma, Geneva, Verdana, sans-serif;
+  transition: all ease-in-out 300ms;
+  user-select: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@theme {
+  --color-danger: rgb(199, 58, 15);
+  --color-danger-dark: rgb(116, 31, 5);
+  --color-success: rgb(30, 164, 117);
+  --color-rose-50: rgb(252, 249, 247);
+  --color-rose-100: rgb(244, 237, 235);
+  --color-rose-300: rgb(201, 174, 166);
+  --color-rose-400: rgb(173, 137, 133);
+  --color-rose-500: rgb(135, 99, 90);
+  --color-rose-900: rgb(38, 15, 8);
+  --container-sm: 23.5rem;
+  --container-8xl: 90rem;
+}
