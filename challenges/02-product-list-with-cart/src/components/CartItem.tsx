@@ -1,14 +1,21 @@
-function CartItem() {
+import useCart from "../hooks/useCart";
+import type { CartItm } from "../store/CartContext";
+
+function CartItem({ item }: { item: CartItm }) {
+  const { removeItem } = useCart();
   return (
     <div className="relative space-y-2 text-sm">
-      <h3 className="font-medium">Classic Tiramisu</h3>
+      <h3 className="font-medium">{item.name}</h3>
       <div className="flex items-center justify-start gap-3.5">
-        <p className="text-danger font-medium">1x</p>
-        <p className="text-rose-500">@ $5.50</p>
+        <p className="text-danger font-medium">{item.quantity}x</p>
+        <p className="text-rose-500">@ ${Number(item.price).toPrecision(3)}</p>
         <p className="text-rose-500 text-shadow-[0px_1px_1px_var(--color-rose-500)]">
-          $5.50
+          ${Number(item.totalPrice).toPrecision(3)}
         </p>
-        <p className="group absolute top-[50%] left-[90%] -translate-y-[50%] cursor-pointer rounded-full border border-rose-500 p-0.5 hover:border-black">
+        <p
+          className="group absolute top-[50%] left-[90%] -translate-y-[50%] cursor-pointer rounded-full border border-rose-500 p-0.5 hover:border-black"
+          onClick={() => removeItem(item.id)}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="10"

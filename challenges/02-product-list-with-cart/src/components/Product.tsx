@@ -10,7 +10,7 @@ function Product({ product }: { product: ProductData }) {
           alt={product.name}
           className="rounded-lg"
         />
-        <AddToCart />
+        <AddToCart id={product.id} />
       </div>
       <span className="block text-sm text-rose-500">{product.category}</span>
       <h3 className="font-medium">{product.name}</h3>
