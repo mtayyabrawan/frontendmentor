@@ -16,6 +16,7 @@ export type CartState = {
 
 type CartCtx = CartState & {
   fetchCart: () => void;
+  getItem: (itemId: string) => undefined | CartItm;
   addItem: (itemId: string) => void;
   removeItem: (itemId: string) => void;
   incrementItem: (itemId: string) => void;
@@ -28,6 +29,7 @@ const CartContext = createContext<CartCtx>({
   totalItems: 0,
   totalPrice: 0,
   fetchCart: () => {},
+  getItem: () => undefined,
   addItem: () => {},
   removeItem: () => {},
   incrementItem: () => {},

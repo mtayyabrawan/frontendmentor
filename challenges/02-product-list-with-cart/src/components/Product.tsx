@@ -1,14 +1,17 @@
+import useCart from "../hooks/useCart";
 import type { ProductData } from "../lib/data";
 import AddToCart from "./AddToCart";
 
 function Product({ product }: { product: ProductData }) {
+  const { getItem } = useCart();
+  const item = getItem(product.id);
   return (
     <div className="h-full w-full space-y-1.5">
       <div className="relative mb-8">
         <img
           src={"." + product.image.desktop}
           alt={product.name}
-          className="rounded-lg"
+          className={`rounded-lg transition-none ${item ? "border-danger border-2" : ""}`}
         />
         <AddToCart id={product.id} />
       </div>

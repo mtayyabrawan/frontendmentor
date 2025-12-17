@@ -48,6 +48,10 @@ function CartProvider({ children }: { children: ReactNode }) {
     }
   }
 
+  function getItem(itemId: string) {
+    return cart.items.find((item) => item.id === itemId);
+  }
+
   function addItem(itemId: string) {
     const item = productsData.find((product) => product.id === itemId);
     if (!item) return;
@@ -106,6 +110,10 @@ function CartProvider({ children }: { children: ReactNode }) {
   function decrementItem(itemId: string) {
     const item = cart.items.find((item) => item.id === itemId);
     if (!item) return;
+    if (item.quantity === 1) {
+      removeItem(itemId);
+      return;
+    }
     const cartState = {
       items: cart.items.map((item) => {
         return item.id !== itemId
@@ -127,6 +135,7 @@ function CartProvider({ children }: { children: ReactNode }) {
       value={{
         ...cart,
         fetchCart,
+        getItem,
         resetCart,
         addItem,
         removeItem,
