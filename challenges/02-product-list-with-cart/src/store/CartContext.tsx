@@ -6,6 +6,7 @@ export type CartItm = {
   price: number;
   quantity: number;
   totalPrice: number;
+  thumbnail: string;
 };
 
 export type CartState = {

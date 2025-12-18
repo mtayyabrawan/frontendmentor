@@ -13,7 +13,7 @@ function CartItem({ item }: { item: CartItm }) {
           ${Number(item.totalPrice).toPrecision(3)}
         </p>
         <p
-          className="group absolute top-[50%] left-[90%] -translate-y-[50%] cursor-pointer rounded-full border border-rose-500 p-0.5 hover:border-black"
+          className="group absolute top-[50%] left-[90%] -translate-y-1/2 cursor-pointer rounded-full border border-rose-500 p-0.5 hover:border-black"
           onClick={() => removeItem(item.id)}
         >
           <svg

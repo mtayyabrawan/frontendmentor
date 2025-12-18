@@ -69,6 +69,7 @@ function CartProvider({ children }: { children: ReactNode }) {
           price: item.price,
           quantity: 1,
           totalPrice: item.price,
+          thumbnail: item.image.thumbnail,
         },
       ],
       totalItems: cart.totalItems + 1,

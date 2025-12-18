@@ -5,7 +5,7 @@ function AddToCart({ id }: { id: string }) {
   const item = getItem(id);
   return (
     <button
-      className={`hover:border-danger focus:border-danger absolute top-[93%] left-[50%] flex -translate-x-[50%] cursor-pointer items-center justify-center rounded-3xl py-2 text-sm font-medium focus-visible:outline-hidden ${!item ? "hover:text-danger focus:text-danger gap-2 border border-rose-500 bg-white px-7 text-black" : "bg-danger gap-8 px-4 text-white"}`}
+      className={`hover:border-danger focus:border-danger absolute top-[93%] left-1/2 flex -translate-x-1/2 cursor-pointer items-center justify-center rounded-3xl py-2 text-sm font-medium focus-visible:outline-hidden ${!item ? "hover:text-danger focus:text-danger gap-2 border border-rose-500 bg-white px-7 text-black" : "bg-danger gap-8 px-4 text-white"}`}
       onClick={() => {
         if (!item) {
           addItem(id);
