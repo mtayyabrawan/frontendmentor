@@ -5,7 +5,7 @@ function AddToCart({ id }: { id: string }) {
   const item = getItem(id);
   return (
     <button
-      className={`hover:border-danger focus:border-danger absolute top-[93%] left-1/2 flex -translate-x-1/2 cursor-pointer items-center justify-center rounded-3xl py-2 text-sm font-medium focus-visible:outline-hidden ${!item ? "hover:text-danger focus:text-danger gap-2 border border-rose-500 bg-white px-7 text-black" : "bg-danger gap-8 px-4 text-white"}`}
+      className={`hover:border-danger focus:border-danger absolute top-[97%] left-1/2 flex -translate-x-1/2 cursor-pointer items-center justify-center rounded-3xl py-2.5 text-sm font-medium focus-visible:outline-hidden md:top-[93%] lg:py-3 ${!item ? "hover:text-danger focus:text-danger gap-2 border border-rose-500 bg-white px-6 text-black lg:px-7" : "bg-danger gap-6 px-4 text-white lg:gap-8"}`}
       onClick={() => {
         if (!item) {
           addItem(id);
@@ -14,13 +14,13 @@ function AddToCart({ id }: { id: string }) {
     >
       {!item ? (
         <>
-          <img src="./images/icon-add-to-cart.svg" alt="Add to Cart" />
+          <img src="./images/icon-add-to-cart.svg" alt="Add to Cart" className="w-4 h-4" />
           <span className="text-nowrap">Add to Cart</span>
         </>
       ) : (
         <>
           <Decrement id={id} />
-          <span>{item.quantity}</span>
+          <span className="font-semibold">{item.quantity}</span>
           <Increment id={id} />
         </>
       )}
@@ -32,7 +32,7 @@ function Increment({ id }: { id: string }) {
   const { incrementItem } = useCart();
   return (
     <span
-      className="group rounded-full border border-white p-0.75 hover:bg-white"
+      className="group cursor-pointer rounded-full border border-white p-0.75 hover:bg-white"
       onClick={() => incrementItem(id)}
     >
       <svg
@@ -53,7 +53,7 @@ function Decrement({ id }: { id: string }) {
   const { decrementItem } = useCart();
   return (
     <span
-      className="group rounded-full border border-white p-0.75 hover:bg-white"
+      className="group rounded-full border border-white p-0.75 hover:bg-white cursor-pointer"
       onClick={() => decrementItem(id)}
     >
       <svg

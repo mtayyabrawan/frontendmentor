@@ -15,6 +15,7 @@
 }
 
 @theme {
+  --breakpoint-xs: 30rem;
   --color-danger: rgb(199, 58, 15);
   --color-danger-dark: rgb(116, 31, 5);
   --color-success: rgb(30, 164, 117);

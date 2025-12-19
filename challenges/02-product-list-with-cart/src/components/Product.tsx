@@ -11,7 +11,7 @@ function Product({ product }: { product: ProductData }) {
         <img
           src={"." + product.image.desktop}
           alt={product.name}
-          className={`rounded-lg transition-none ${item ? "border-danger border-2" : ""}`}
+          className={`w-full rounded-lg transition-none ${item ? "border-danger border-2" : ""}`}
         />
         <AddToCart id={product.id} />
       </div>

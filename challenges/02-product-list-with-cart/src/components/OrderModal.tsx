@@ -39,9 +39,9 @@ function OrderModal({
 
   return (
     <div className="fixed inset-0 z-50 h-full w-full bg-black/30">
-      <div className="max-w-8xl relative mx-auto h-screen w-full min-w-sm">
+      <div className="max-w-8xl relative mx-auto h-full w-full min-w-xs">
         <div
-          className="absolute left-1/2 mt-10 h-130 w-1/3 -translate-x-1/2 rounded-lg bg-white p-6"
+          className="absolute bottom-0 left-0 h-130 w-full rounded-t-lg bg-white p-6 md:bottom-auto md:left-1/2 md:mt-10 md:w-[65%] md:-translate-x-1/2 md:rounded-lg lg:w-[45%] xl:w-1/3"
           ref={modalRef}
         >
           <div className="h-[22%]">
@@ -67,7 +67,7 @@ function OrderModal({
             className="bg-danger hover:bg-danger-dark block h-[10%] w-full cursor-pointer rounded-3xl p-2 text-rose-50 focus-visible:outline-hidden"
             onClick={confirmOrder}
           >
-            Confirm Order
+            Start New Order
           </button>
         </div>
       </div>
