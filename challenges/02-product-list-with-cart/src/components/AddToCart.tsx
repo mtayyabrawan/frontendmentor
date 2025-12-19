@@ -14,7 +14,11 @@ function AddToCart({ id }: { id: string }) {
     >
       {!item ? (
         <>
-          <img src="./images/icon-add-to-cart.svg" alt="Add to Cart" className="w-4 h-4" />
+          <img
+            src="./images/icon-add-to-cart.svg"
+            alt="Add to Cart"
+            className="h-4 w-4"
+          />
           <span className="text-nowrap">Add to Cart</span>
         </>
       ) : (
@@ -53,7 +57,7 @@ function Decrement({ id }: { id: string }) {
   const { decrementItem } = useCart();
   return (
     <span
-      className="group rounded-full border border-white p-0.75 hover:bg-white cursor-pointer"
+      className="group cursor-pointer rounded-full border border-white p-0.75 hover:bg-white"
       onClick={() => decrementItem(id)}
     >
       <svg
